@@ -27,11 +27,11 @@ class HealthCheckControllerTest {
     @Test
     void shouldReturnHealthStatusOk() throws Exception {
         HealthStatusDTO mockDto = new HealthStatusDTO(
-            "UP",
-            "test-app",
-            "development",
-            Instant.now(),
-            12345L
+                "UP",
+                "test-app",
+                "development",
+                Instant.now(),
+                12345L
         );
 
         when(healthCheckService.checkHealth()).thenReturn(mockDto);

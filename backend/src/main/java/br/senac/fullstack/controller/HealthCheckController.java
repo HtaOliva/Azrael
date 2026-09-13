@@ -17,8 +17,8 @@ public class HealthCheckController {
         this.healthCheckService = healthCheckService;
     }
 
-    @GetMapping("/hello")
-    public string HelloWorld() {
-        return "Hello, World!";
+    @GetMapping
+    public ResponseEntity<HealthStatusDTO> health() {
+        return ResponseEntity.ok(healthCheckService.checkHealth());
     }
 }
