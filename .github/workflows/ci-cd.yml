@@ -206,11 +206,11 @@ jobs:
           else
             echo "Iniciando análise estática e verificação do Quality Gate no SonarQube..."
             mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-            -Dsonar.host.url="$SECRETS_SONAR_HOST_URL" \
-            -Dsonar.java.binaries=target/classes \
-            -Dsonar.coverage.jacoco.xmlReportPaths=backend/target/site/jacoco/jacoco.xml \
-            -Dsonar.token="${SONAR_TOKEN}" \
-            -Dsonar.qualitygate.wait=true
+              -Dsonar.host.url="$SONAR_HOST_URL" \
+              -Dsonar.java.binaries=backend/target/classes \
+              -Dsonar.coverage.jacoco.xmlReportPaths=backend/target/site/jacoco/jacoco.xml \
+              -Dsonar.token="${SONAR_TOKEN}" \
+              -Dsonar.qualitygate.wait=true -f backend/pom.xml
           fi
 
   # =========================================================================
