@@ -48,9 +48,9 @@ jobs:
           cache-dependency-path: 'frontend/package.json'
 
       - name: 🔍 Backend - Lint (Checkstyle) & Validation
-    run: |
-      echo "Executando análise de linting no código Java com Checkstyle..."
-      mvn -B checkstyle:check -f backend/pom.xml -Dcheckstyle.config.location=checkstyle.xml -Dcheckstyle.failsOnError=false
+        run: |
+          echo "Executando análise de linting no código Java com Checkstyle..."
+          mvn -B checkstyle:check -f backend/pom.xml -Dcheckstyle.config.location=backend/checkstyle.xml -Dcheckstyle.failsOnError=false
 
       - name: 🏗️ Backend - Build & Run Tests with JaCoCo Coverage
         run: |
